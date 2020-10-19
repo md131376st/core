@@ -48,6 +48,7 @@ namespace core
         {
             var log = NLog.LogManager.GetCurrentClassLogger();
             log.Info("one entrrupt timer:" + Utils.Timer.Interval);
+            Console.WriteLine("one entrrupt timer:" + Utils.Timer.Interval);
             var state =InFoControl.sendData();
             if (state == true)
                 Utils.Timer.Interval = Utils.timerInterval;

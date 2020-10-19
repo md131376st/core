@@ -39,7 +39,11 @@ namespace core.Control
                 //foreach (var item in data)
                 //{
                 //    var json = JsonConvert.SerializeObject(item);
-                var json = JsonConvert.SerializeObject(new Info() { Name = "test1", Age = 20, IsFemale = false });
+                Random rand = new Random();
+                var json = JsonConvert.SerializeObject(new Info() { 
+                        Name = "test1", 
+                        Age = 20, 
+                        IsFemale = rand.NextDouble() > 0.5?true:false});
                     var postData = new StringContent(json, Encoding.UTF8, "application/json");
                     var result = GeneralControl.Request(Enumerations.Api.BasicInformation, postData);
                     if (result == false)
